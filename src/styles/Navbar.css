@@ -1,0 +1,68 @@
+.nav{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #062C30;
+}
+
+.nav div{
+    display: flex;
+    align-items: center;
+}
+
+.titulo{
+    color: white;
+    margin-left: 15px;
+}
+
+.nav .logo{
+    width: 100px;
+    height: 100px;
+}
+
+.nav .ulNav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    list-style: none;
+}
+
+
+.nav .ulNav li a{
+    text-decoration: none;
+    font-family: 'Signika', sans-serif;
+    color: black;
+    font-size: 1.8em;
+    margin: 0 20px;
+    border-radius: 10px;
+    padding: 5px 10px 5px 10px;
+    color: white;
+    transition: .5s;
+}
+
+.nav ul li a:hover{
+    color: black;
+    background-color: #DFDFDE;
+}
+
+.carro-compra{
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 2px 2px black;
+    background-color: #EEEDDE;
+    transition: all 0.3s ease 0s;
+}
+
+.carro-compra:hover{
+    cursor: pointer;
+    transform: translateY(-5px);
+}
+
+.carro-compra:active {
+    transform: translateY(-1px);
+}
