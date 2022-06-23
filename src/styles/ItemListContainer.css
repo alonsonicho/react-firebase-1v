@@ -1,0 +1,7 @@
+
+.itemListContainer > p{
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    text-transform: uppercase;
+}

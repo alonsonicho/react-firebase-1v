@@ -1,13 +1,13 @@
 import '../styles/Navbar.css';
 import logo from '../assets/NH.jpg'
-import compra from '../assets/bolso.png'
+import CartWidget from './CartWidget';
 
 function Navbar() {
   return (
     <header className='navbar'>
       <nav className='nav'>
             <div>
-              <img class="logo" src={logo} alt='logo'/>
+              <img className="logo" src={logo} alt='logo'/>
               <h1 className='titulo'>Next Hin's</h1>
             </div>
             <div>
@@ -22,8 +22,8 @@ function Navbar() {
                   <a href="?">Contacto</a>
                 </li>
               </ul>
-              <img className='carro-compra' src={compra} alt="bolso_compras" />
             </div>
+            <CartWidget/>
       </nav>
     </header>
   );
