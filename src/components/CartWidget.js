@@ -1,11 +1,11 @@
 import compra from '../assets/bolso.png'
-import '../styles/CartWidgets.css'
+import styles from '../styles/CartWidgets.module.css'
 
 const CartWidget = () => {
   return (
-    <div className="container-Cart">
-      <img className="carro-compra" src={compra} alt="carro-compra" />
-      <span className="contador">3</span>
+    <div className={styles.containerCart}>
+      <img className={styles.carroCompra} src={compra} alt="carro-compra" />
+      <span className={styles.contador}>3</span>
     </div>
   )
 }
