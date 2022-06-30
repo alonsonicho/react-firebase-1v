@@ -1,0 +1,47 @@
+[
+  { "id": 1, "categoria":"poleras", "nombre": "Polera Black", "stock": 5, "precio": 120, "talle": "L", "img": "1.jpg" },
+
+  { "id": 2, "categoria":"poleras", "nombre": "Polera Black", "stock": 12, "precio": 110, "talle": "L", "img": "2.jpg" },
+
+  { "id": 3, "categoria":"poleras", "nombre": "Polera Blue", "stock": 11, "precio": 120, "talle": "M", "img": "3.jpg" },
+
+  { "id": 4, "categoria":"poleras", "nombre": "Polera Black", "stock": 13, "precio": 140, "talle": "M", "img": "4.jpg" },
+
+  { "id": 5,  "categoria":"poleras", "nombre": "Polera Black", "stock": 4, "precio": 120, "talle": "S", "img": "5.jpg" },
+
+  { "id": 6, "categoria":"poleras", "nombre": "Polera Black", "stock": 7, "precio": 150, "talle": "S", "img": "6.jpg" },
+
+  { "id": 7, "categoria":"poleras", "nombre": "Polera Black", "stock": 9, "precio": 50, "talle": "L", "img": "7.jpg" },
+
+  { "id": 8, "categoria":"poleras", "nombre": "Polera Black", "stock": 15, "precio": 50, "talle": "L", "img": "8.jpg" },
+
+  { "id": 9, "categoria":"poleras", "nombre": "Polera Black", "stock": 20, "precio": 50, "talle": "M", "img": "9.jpg" },
+
+  { "id": 10, "categoria":"poleras", "nombre": "Polera Black", "stock": 12, "precio": 70, "talle": "M", "img": "10.jpg" },
+
+  { "id": 11, "categoria":"poleras", "nombre": "Polera White", "stock": 16, "precio": 70, "talle": "S", "img": "11.jpg" },
+
+  { "id": 12, "categoria":"poleras", "nombre": "Polera White", "stock": 15, "precio": 70, "talle": "S", "img": "12.jpg" },
+
+  { "id": 13, "categoria":"poleras", "nombre": "Polera Black", "stock": 13, "precio": 90, "talle": "L", "img": "13.jpg" },
+
+  { "id": 14, "categoria":"poleras", "nombre": "Polera Black", "stock": 16, "precio": 140, "talle": "S", "img": "14.jpg" },
+
+  { "id": 15, "categoria":"poleras", "nombre": "Polera Yellow", "stock": 18, "precio": 70, "talle": "L", "img": "15.jpg" },
+
+  { "id": 16, "categoria":"poleras", "nombre": "Polera Green", "stock": 13, "precio": 100, "talle": "L", "img": "16.jpg" },
+  
+  { "id": 17, "categoria":"pantalones", "nombre": "Jeans Azul", "stock": 40, "precio": 70, "talle": "S", "img": "17.jpg" },
+
+  { "id": 18, "categoria":"pantalones", "nombre": "Jeans Skinny Azul", "stock": 3, "precio": 140, "talle": "S", "img": "18.jpg" },
+
+  { "id": 19, "categoria":"pantalones", "nombre": "Jeans Azul Marino", "stock": 20, "precio": 120, "talle": "L", "img": "19.jpg" },
+
+  { "id": 20, "categoria":"pantalones", "nombre": "Pantalon Cuadros", "stock": 30, "precio": 60, "talle": "xL", "img": "20.jpg" },
+
+  { "id": 21, "categoria":"pantalones", "nombre": "Pantalon Green", "stock": 15, "precio": 60, "talle": "M", "img": "21.jpg" },
+
+  { "id": 22, "categoria":"pantalones", "nombre": "Jeans Claro", "stock": 8, "precio": 80, "talle": "L", "img": "22.jpg" },
+
+  { "id": 23, "categoria":"pantalones", "nombre": "Jeans Azul", "stock": 6, "precio": 160, "talle": "XL", "img": "23.jpg" }
+]

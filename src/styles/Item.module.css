@@ -1,0 +1,43 @@
+.containerInfo{
+    width: 280px;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    border: 1px solid black;
+}
+
+.containerInfo:hover{
+    box-shadow: 0px 0px 15px 1px #A3A7AA ;
+    transition: 0.4s ease;
+}
+
+.imagen{
+    width: 280px;
+    height: 300px;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #EEEDDE;
+    margin-top: 3px;
+    width: 280px;
+    font-weight: bold;
+    font-family: 'Signika', sans-serif;
+}
+
+.infoInt{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 10px 10px;
+}
+
+.infoInt p{
+    border: 1px solid black;
+}

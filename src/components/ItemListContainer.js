@@ -1,20 +1,23 @@
+ import { useEffect, useState } from 'react'
  import styles from '../styles/ItemListContainer.module.css'
- import ItemCount from './ItemCount'
+ import ItemList from './ItemList'
 
 const ItemListContainer = ({titulo}) => {
 
-  const onAdd = (cantidad) =>{
-    console.log(`SE AGREGO ${cantidad} U`)
-  }
+  const [productos, setProductos] = useState([])
+ 
+  useEffect(() => {
+      setTimeout(() => {
+        fetch('data.json')
+        .then(resp => resp.json())
+        .then(data => setProductos(data))
+      }, 2000);
+  }, [])
 
   return (
     <div className={styles.itemListContainer}>
       <p>{titulo}</p>
-      <div className={styles.prueba}>
-        <ItemCount inicial={0} stock={5} onAdd={onAdd}/>
-        <ItemCount inicial={0} stock={10} onAdd={onAdd}/>
-        <ItemCount inicial={0} stock={7} onAdd={onAdd}/>
-      </div>
+      <ItemList productos={productos}/>
     </div>
   )
 }

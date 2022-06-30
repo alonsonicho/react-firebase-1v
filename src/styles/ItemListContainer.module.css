@@ -1,16 +1,10 @@
 .itemListContainer{
-    /* border: 3px solid red; */
+    width: 100%;
 }
-
 
 .itemListContainer > p{
     text-align: center;
     font-size: 2em;
     font-weight: bold;
     text-transform: uppercase;
-}
-
-.itemListContainer .prueba{
-    display: flex;
-    justify-content: space-evenly;
 }
