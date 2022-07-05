@@ -1,4 +1,3 @@
-import ItemCount from "./ItemCount"
 import styles from "../styles/Item.module.css"
 
 const Item = ({imagen, nombre, talla, precio, stock, id}) => {
@@ -10,7 +9,9 @@ const Item = ({imagen, nombre, talla, precio, stock, id}) => {
                   <span>{nombre}</span>
                   <span>${precio}</span>
               </div>
-              <ItemCount inicial={0} stock={stock} id={id}/>
+              <button className={styles.buttonAdd}>
+               Ver
+              </button>
           </div>
       </div>
   )

@@ -2,6 +2,7 @@ import Item from './Item'
 import styles from "../styles/ItemList.module.css"
 
 const ItemList = ({productos}) => {
+
   return (
     <div className={styles.itemList}>
       {productos.map((pro) => 

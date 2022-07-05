@@ -1,7 +1,7 @@
 import { useState } from "react"
 import styles from "../styles/ItemCount.module.css"
 
-const ItemCount = ({stock, inicial, onAdd, id}) => {
+const ItemCount = ({stock, inicial, id}) => {
 
     const [unidades, setUnidades] = useState(inicial)
     const [stockActual, setStockActual] = useState(stock)
@@ -25,7 +25,7 @@ const ItemCount = ({stock, inicial, onAdd, id}) => {
             <span className={styles.unidadesAdd}>{unidades}</span>
             <button className={styles.buttonMax} onClick={sumar} disabled={unidades > (stock-1)}>+</button>
         </div>
-        <button className={styles.buttonAdd} onClick={() => onAdd(unidades)}>AGREGAR</button>
+        {/* <button className={styles.buttonAdd} onClick={() => onAdd(unidades)}>AGREGAR</button> */}
     </div>
   )
 }

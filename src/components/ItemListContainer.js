@@ -11,7 +11,7 @@ const ItemListContainer = ({titulo}) => {
         fetch('data.json')
         .then(resp => resp.json())
         .then(data => setProductos(data))
-      }, 2000);
+      }, 1000);
   }, [])
 
   return (
