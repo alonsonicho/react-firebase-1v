@@ -1,15 +1,16 @@
 
-// import ItemCount from "./ItemCount"
+import ItemCount from "./ItemCount"
 
 
-const ItemDetail = ({img, nombre, categoria, stock, precio}) => {
+const ItemDetail = ({props}) => {
+
 
   return (
     <div>
-      <img src={require(`../assets/${img}`)} alt={nombre}/>
-        <p>{nombre}</p>
-        <p>{categoria}</p>
-        <p>{precio}</p>
+      {/* <img src={require(`../assets/${props.img}`)} alt={props.nombre}/> */}
+        <p>{props.nombre}</p>
+        <p>{props.categoria}</p>
+      <ItemCount stock={props.stock} inicial={0}/>
     </div>
   )
 }

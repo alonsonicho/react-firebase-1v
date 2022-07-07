@@ -13,6 +13,7 @@ const ItemList = ({productos}) => {
             stock={pro.stock}
             precio={pro.precio}
             talla={pro.talle}
+            id={pro.id}
         />
       )}
     </div>

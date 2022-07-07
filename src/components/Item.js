@@ -1,4 +1,5 @@
 import styles from "../styles/Item.module.css"
+import {Link} from "react-router-dom"
 
 const Item = ({imagen, nombre, talla, precio, stock, id}) => {
   return (
@@ -9,9 +10,11 @@ const Item = ({imagen, nombre, talla, precio, stock, id}) => {
                   <span>{nombre}</span>
                   <span>${precio}</span>
               </div>
-              <button className={styles.buttonAdd}>
-               Ver
-              </button>
+             <Link to={`/producto/${id}`}>
+                <button className={styles.buttonAdd}>
+                    Ver detalle
+                </button>
+             </Link>
           </div>
       </div>
   )

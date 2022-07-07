@@ -1,29 +1,30 @@
 import { useEffect, useState } from "react"
 import ItemDetail from "./ItemDetail"
+import {useParams} from "react-router-dom"
 
 const ItemDetailContainer = () => {
 
-    const [producto, setProducto] = useState([])
- 
+    const [producto, setProducto] = useState({})
+    const [isLoading, setIsLoading] = useState(true)
+    const {idProd} = useParams()
+    
     useEffect(() => {
+      setIsLoading(true)
       setTimeout(() => {
-        fetch('data.json', {
-          headers: {
-            'Content-Type':'application/json',
-            'Accept':'application/json'
-          }
-        })
-        .then(resp => resp.json())
-        .then(data => {setProducto(data.filter(item => item.id === 3))
-        })
+        fetch('data.json')
+          .then(resp => resp.json())
+          .then(data => {setProducto(data.find(item => item.id === parseInt(idProd)))
+          .catch(err => console.log(err))
+          })
       }, 1000);
-    }, [])
+      setIsLoading(false)
+    }, [idProd])
     console.log(producto)
 
   return (
-    <div>
-      <ItemDetail producto={producto}/>
-    </div>
+    <>
+      {isLoading ? (<h1>Loading ...</h1>) : (<ItemDetail props={producto} key={producto.id}/>)}
+    </>
   )
 }
 

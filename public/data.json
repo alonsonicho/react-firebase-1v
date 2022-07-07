@@ -43,5 +43,7 @@
 
   { "id": 22, "categoria":"pantalones", "nombre": "Jeans Claro", "stock": 8, "precio": 80, "talle": "L", "img": "22.jpg" },
 
-  { "id": 23, "categoria":"pantalones", "nombre": "Jeans Azul", "stock": 6, "precio": 160, "talle": "XL", "img": "23.jpg" }
+  { "id": 23, "categoria":"pantalones", "nombre": "Jeans Azul", "stock": 6, "precio": 160, "talle": "XL", "img": "23.jpg" },
+
+  { "id": 24, "categoria":"gorras", "nombre": "Jeans Azul", "stock": 6, "precio": 160, "talle": "XL", "img": "23.jpg" }
 ]
