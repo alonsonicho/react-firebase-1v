@@ -1,6 +1,7 @@
  import { useEffect, useState } from 'react'
  import styles from '../styles/ItemListContainer.module.css'
  import ItemList from './ItemList'
+ import Spinner from './Spinner'
  import {useParams} from "react-router-dom"
 
 const ItemListContainer = ({titulo}) => {
@@ -12,7 +13,7 @@ const ItemListContainer = ({titulo}) => {
   useEffect(() => {
     setIsLoading(true)
       setTimeout(() => {
-        fetch('data.json')
+        fetch('/data.json')
           .then(resp => resp.json())
           .then(data =>
              {
@@ -25,17 +26,15 @@ const ItemListContainer = ({titulo}) => {
             }else{
               setProductos(data)
             }
+            setIsLoading(false)
           })
       }, 1000);
-      setIsLoading(false)
   }, [idCategoria])
-
-console.log(productos)
 
   return (
     <div className={styles.itemListContainer}>
       <p>{titulo}</p>
-      {isLoading ? (<h1>Loading</h1>) : (<ItemList productos={productos}/>)}
+      {isLoading ? (<Spinner/>) : (<ItemList productos={productos}/>)}
     </div>
   )
 }

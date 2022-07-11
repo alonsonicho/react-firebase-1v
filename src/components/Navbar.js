@@ -9,13 +9,13 @@ function Navbar() {
     <header className={styles.navbar}>
       <nav className={styles.nav}>
             <div>
-              <img className={styles.logo} src={logo} alt='logo'/>
+              <Link to="/"><img className={styles.logo} src={logo} alt='logo'/></Link>
               <h1 className={styles.titulo}>Next Hin's</h1>
             </div>
             <div>
               <ul className={styles.ulNav}>
                 <li>
-                  <Link to="">Home</Link>
+                  <Link to="/">Home</Link>
                 </li>
                 <li>
                   <Link to="/categoria/poleras">Poleras</Link>

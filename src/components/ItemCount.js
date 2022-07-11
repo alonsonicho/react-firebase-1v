@@ -1,7 +1,7 @@
 import { useState } from "react"
 import styles from "../styles/ItemCount.module.css"
 
-const ItemCount = ({stock, inicial}) => {
+const ItemCount = ({stock, inicial, onAdd}) => {
 
     const [unidades, setUnidades] = useState(inicial)
     const [stockActual, setStockActual] = useState(stock)
@@ -23,9 +23,9 @@ const ItemCount = ({stock, inicial}) => {
         <div>
             <button className={styles.buttonMin} onClick={restar} disabled={unidades === 0}>-</button>
             <span className={styles.unidadesAdd}>{unidades}</span>
-            <button className={styles.buttonMax} onClick={sumar} disabled={unidades > (stock-1)}>+</button>
+            <button className={styles.buttonMax} onClick={sumar} disabled={unidades > (stock)}>+</button>
         </div>
-        {/* <button className={styles.buttonAdd} onClick={() => onAdd(unidades)}>AGREGAR</button> */}
+        <button className={styles.buttonAdd} onClick={() => onAdd(unidades)}>Agregar al carrito</button>
     </div>
   )
 }
