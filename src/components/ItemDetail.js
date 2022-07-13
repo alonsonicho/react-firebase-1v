@@ -1,7 +1,8 @@
 import styles from "../styles/itemDetail.module.css"
 import ItemCount from "./ItemCount"
-import { useState } from "react"
+import { useContext, useState } from "react"
 import {Link} from "react-router-dom"
+import { CartContext } from "../components/CartContext"
 
 
 const ItemDetail = ({props}) => {
@@ -9,9 +10,12 @@ const ItemDetail = ({props}) => {
   const [isVisible, setIsVisible] = useState(true)
   const [cantidad, setCantidad] = useState(0)
 
+  const {addToCart} = useContext(CartContext)
+
   const onAdd = (unidades) => {
     setIsVisible(false)
     setCantidad(unidades)
+    addToCart(props,unidades)
   }
 
   console.log(cantidad)
