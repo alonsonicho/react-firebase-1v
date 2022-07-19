@@ -1,0 +1,51 @@
+.container{
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    justify-content: space-evenly;
+    padding: 10px;
+    background-color: #d9dad7;
+}
+
+
+
+.divInfoImg{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 40%;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.divInfoImg img {
+    width: 30%;
+    height: 70%;
+}
+
+.divInfo{
+    display: flex;
+    width: 40%;
+    align-items: center;
+    justify-content: space-evenly;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.divButton{
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.divButton button{
+    background-color: #d63447;
+    color: white;
+    border-radius: 50px;
+    padding: 8px;
+    width: 35px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}

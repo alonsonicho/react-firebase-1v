@@ -39,7 +39,7 @@ export const CartProvider = ({defaultValue=[], children}) => {
     }
 
     const isInCart = (id) => {
-        return cart.find((element) => element.item.id === id)
+        return cart.some((element) => element.item.id === id)
     }
 
     const removeItem = (id) => {
@@ -47,11 +47,33 @@ export const CartProvider = ({defaultValue=[], children}) => {
         setCart(newCart)
     }
 
+    const getQuantity = () => {
+        let cantidad = 0;
+        cart.forEach((element) => cantidad = cantidad+element.quantity)
+        return cantidad;
+    }
+
+    const getTotal = () => {
+        let total = 0;
+        cart.forEach((element) => {
+            total = total+(element.quantity * element.item.precio)
+        })
+        return total;
+    }
+
+    const subtotal = (quantity,precio) =>{
+        let subtotal = quantity*precio;
+        return subtotal;
+    }
+
     const context = {
         cart,
         clearCart,
-        addToCart: addItems,
-        removeItem
+        addItems,
+        removeItem,
+        getQuantity,
+        getTotal,
+        subtotal
     }
 
     return (

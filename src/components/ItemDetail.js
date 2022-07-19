@@ -10,12 +10,12 @@ const ItemDetail = ({props}) => {
   const [isVisible, setIsVisible] = useState(true)
   const [cantidad, setCantidad] = useState(0)
 
-  const {addToCart} = useContext(CartContext)
+  const {addItems} = useContext(CartContext)
 
   const onAdd = (unidades) => {
     setIsVisible(false)
     setCantidad(unidades)
-    addToCart(props,unidades)
+    addItems(props,unidades,props.precio)
   }
 
   console.log(cantidad)
