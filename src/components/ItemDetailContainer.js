@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import ItemDetail from "./ItemDetail"
 import Spinner from "./Spinner"
 import {useParams} from "react-router-dom"
+import {getDataProduct} from "../firebase/Firestore.js"
 
 const ItemDetailContainer = () => {
 
@@ -12,14 +13,18 @@ const ItemDetailContainer = () => {
     useEffect(() => {
       setIsLoading(true)
       setTimeout(() => {
-        fetch('/data.json')
-          .then(resp => resp.json())
-          .then(data => {setProducto(data.find(item => item.id === parseInt(id)))
+        // getDataProduct nos devuelve el objeto con la informacion del producto por ID del useParams
+          getDataProduct(id)
+          .then((itemPromise) => {
+            setProducto(itemPromise)
             setIsLoading(false)
           })
-      }, 1000);
+          .catch((error) => {
+            console.log(error)
+          })
+      }, 500);
     }, [id])
-
+  
   return (
     <>
       {isLoading ? (<Spinner/>) : (<ItemDetail props={producto} key={producto.id}/>)}

@@ -3,6 +3,8 @@
  import ItemList from './ItemList'
  import Spinner from './Spinner'
  import {useParams} from "react-router-dom"
+ import {getData} from "../firebase/Firestore.js"
+
 
 const ItemListContainer = ({titulo}) => {
 
@@ -11,11 +13,10 @@ const ItemListContainer = ({titulo}) => {
   const [isLoading, setIsLoading] = useState(true)
  
   useEffect(() => {
-    setIsLoading(true)
+    setIsLoading(true) 
       setTimeout(() => {
-        fetch('/data.json')
-          .then(resp => resp.json())
-          .then(data =>
+          // Invocamos funcion getData para obtener el conjunto de datos
+          getData().then(data =>
              {
             if(idCategoria){
               setProductos(
@@ -28,7 +29,7 @@ const ItemListContainer = ({titulo}) => {
             }
             setIsLoading(false)
           })
-      }, 1000);
+      }, 500);
   }, [idCategoria])
 
   return (
