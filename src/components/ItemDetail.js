@@ -15,7 +15,7 @@ const ItemDetail = ({props}) => {
   const onAdd = (unidades) => {
     setIsVisible(false)
     setCantidad(unidades)
-    addItems(props,unidades,props.precio)
+    addItems(props,unidades)
   }
 
   console.log(cantidad)

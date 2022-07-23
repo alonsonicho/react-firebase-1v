@@ -12,7 +12,6 @@ const ItemDetailContainer = () => {
     
     useEffect(() => {
       setIsLoading(true)
-      setTimeout(() => {
         // getDataProduct nos devuelve el objeto con la informacion del producto por ID del useParams
           getDataProduct(id)
           .then((itemPromise) => {
@@ -22,7 +21,6 @@ const ItemDetailContainer = () => {
           .catch((error) => {
             console.log(error)
           })
-      }, 500);
     }, [id])
   
   return (

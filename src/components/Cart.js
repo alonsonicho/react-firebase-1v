@@ -1,12 +1,24 @@
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import {CartContext} from "./CartContext"
 import CartItem from "./CartItem"
 import {Link} from "react-router-dom"
 import style from "../styles/Cart.module.css"
+import Form from "./Form"
 
 const Cart = () => {
 
   const context = useContext(CartContext)
+  const [isVisible, setIsVisible] = useState(false)
+
+  const activeForm = () => {
+      setIsVisible(true)
+  }
+
+  const removeForm = () => {
+    setTimeout(() => {
+      setIsVisible(false)
+    }, 1500);
+  }
 
   return (
     <>
@@ -46,9 +58,10 @@ const Cart = () => {
               <p>PAGO TOTAL: ${context.getTotal()}</p>
             </div>
             <div className={style.divButton2}>
-              <button onClick={() => context.clearCart()}>VACIAR CARRITO</button>
+              <button onClick={context.clearCart}>VACIAR CARRITO</button>
             </div>
           </div>
+          { isVisible === false ? <button className={style.buttonIniciar} onClick={() => activeForm()}>INICIAR PEDIDO</button> : <h2 className={style.tittle}>FORMULARIO DE CONTACTO</h2>}
       </div>) : (
         <div className={style.divMensaje}>
           <p>NO HAY PRODUCTOS EN SU CARRITO</p>
@@ -56,6 +69,7 @@ const Cart = () => {
         </div>
       )
       }
+      { isVisible ? <Form props={context} removeForm={removeForm}/> : <></>}
     </>
   )
 }

@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore, doc, getDoc, collection, getDocs} from 'firebase/firestore'
+import { getFirestore, doc, getDoc, collection, getDocs, query, where, addDoc, updateDoc} from 'firebase/firestore'
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -17,7 +17,7 @@ const app = initializeApp(firebaseConfig);
 
 const db = getFirestore(app);
 
-// Funcion para el listado de productos
+// Funcion para el listado completo de productos
 export async function getData(){
     // Referencia la coleccion
     const itemsCollectionRef = collection(db,"items");
@@ -46,8 +46,6 @@ export async function getDataProduct(id){
 
   const docSnapshot = await getDoc(docRef)
 
-  // const data = docSnapshot.data();
-
   // Objeto donde agregamos el id del Firebase
   const product = {
     ...docSnapshot.data(),
@@ -56,9 +54,43 @@ export async function getDataProduct(id){
   return product;
 }
 
-// export default db;
+
+// Buscar productos por categoria
+export async function getDataCategory(idCategoria){
+
+  const itemsCollectionRef = collection(db,"items");
+
+  const result = query(itemsCollectionRef, where('categoria','==', idCategoria));
+
+  const docSnapshot = await getDocs(result)
+
+  const data  = docSnapshot.docs.map(item => {
+    const products = {
+      ...item.data(),
+      id: item.id
+    }
+    return products;
+  })
+
+  return data;
+}
 
 
+// Insertar data hacia la collection orders
+export function insertDataOrder(order, state){
+  
+  const ordersCollectionRef = collection(db,"orders");
+  addDoc(ordersCollectionRef, order)
+    .then((doc) => state(doc.id))
+}
+
+
+// Actualizar Stock del producto
+export function updateStockProduct(id, newStock){
+
+  const updateStock = doc(db, "items", id)
+  updateDoc(updateStock, {stock:newStock})
+}
 
 
 
