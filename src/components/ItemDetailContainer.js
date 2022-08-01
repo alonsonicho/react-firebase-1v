@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
-import ItemDetail from "./ItemDetail"
-import Spinner from "./Spinner"
 import {useParams} from "react-router-dom"
 import {getDataProduct} from "../firebase/Firestore.js"
+import ItemDetail from "./ItemDetail"
+import Spinner from "./Spinner"
 
 const ItemDetailContainer = () => {
 
@@ -12,10 +12,10 @@ const ItemDetailContainer = () => {
     
     useEffect(() => {
       setIsLoading(true)
-        // getDataProduct nos devuelve el objeto con la informacion del producto por ID del useParams
+        // getDataProduct nos devuelve el objeto con la informacion del producto por ID del useParams y se almacena en el state 
           getDataProduct(id)
-          .then((itemPromise) => {
-            setProducto(itemPromise)
+          .then((item) => {
+            setProducto(item)
             setIsLoading(false)
           })
           .catch((error) => {

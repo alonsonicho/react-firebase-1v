@@ -1,6 +1,6 @@
-import style from "../styles/Form.module.css"
 import { useState } from "react"
 import { insertDataOrder, updateStockProduct } from "../firebase/Firestore.js"
+import style from "../styles/Form.module.css"
 import Swal from "sweetalert2";
 
 const Form = ({props, removeForm}) => {
@@ -8,9 +8,7 @@ const Form = ({props, removeForm}) => {
     const [name, setName] = useState("");
     const [phone, setPhone] = useState("");
     const [email, setEmail] = useState("");
-    const [idOrder, setIdOrder] = useState()
 
-    
     const nameHandler = (event => {
         setName(event.target.value)
     })
@@ -22,7 +20,6 @@ const Form = ({props, removeForm}) => {
     const emailHandler = (event => {
         setEmail(event.target.value)
     })
-
     
   const submitHandler = (event) => {
       event.preventDefault()
@@ -40,37 +37,38 @@ const Form = ({props, removeForm}) => {
           total: props.getTotal()
       }
 
-      // Funcion para insertar la order en la collection con el state para almacenar el id
-      insertDataOrder(order, setIdOrder)
+      // Funcion para insertar la order en la collection
+      // Recibe como parametro la order y la funcion para que imprima la orden con el id generado
+      insertDataOrder(order, imprimirOrden)
 
       // Actualizar stock del producto
       const id = order.items.map(data => data.item.id);
       const newStock = order.items.map(data => data.item.stock - data.quantity);
-
       for(let i=0; i<id.length; i++){
         updateStockProduct(id[i], newStock[i])
       }
 
       //  Reset de los state y el cart de productos
-      setName("")
-      setPhone("")
-      setEmail("")
-      props.clearCart();
+      setName("");
+      setPhone("");
+      setEmail("");
 
-      // Remover formulario cuando se envia la data del usuario
-      removeForm()
+      // Remueve el form cuando se envia la data del usuario
+      removeForm();
   }
-    // Mensaje con ID de compra
-    if(idOrder!==undefined){
+
+    // Funcion para la impresion de alerta con id order
+    const imprimirOrden = (id) => {
       Swal.fire({
         icon: 'success',
         title: 'Gracias por su compra',
-        text: `ID COMPRA : ${idOrder}`
-      })  
+        text: `ID COMPRA : ${id}`
+      }) 
     }
 
   return (
       <form onSubmit={submitHandler}>
+        <h2 className={style.tittle}>FORMULARIO DE CONTACTO</h2>
         <div>
           <label>Nombres :</label>
           <input type="text" value={name} name="name" onChange={nameHandler} required/>

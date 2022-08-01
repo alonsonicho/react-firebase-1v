@@ -1,23 +1,31 @@
-import style from "../styles/CartItem.module.css"
+import style from "../styles/CartItem.module.css";
 
-const CartItem = ({id,nombre,precio,talla,cantidad,imagen,removeItem,subtotal}) => {
+const CartItem = ({ id, nombre, precio, talla, cantidad, imagen, removeItem, subtotal }) => {
   return (
-    <div className={style.container}>
-        <div className={style.divInfoImg}>
-          <img className={style.imagenCart} src={require(`../assets/${imagen}`)} alt={nombre}/>
-          <p>{nombre}</p>
+    <tr>
+      <td className={style.containerData}>
+        <img className={style.imagenCart} src={imagen} alt={nombre} />
+        <div className={style.spanData}>
+          <span>{nombre}</span>
+          <span>Talla : {talla}</span>
+          <span>
+            <button onClick={() => removeItem(id)} className={style.buttonRemoveItem}>
+              Eliminar
+            </button>
+          </span>
         </div>
-        <div className={style.divInfo}>
-          <p>{talla}</p>
-          <p>${precio}</p>
-          <p>{cantidad}</p>
-          <p>${subtotal}</p>
-        </div>
-        <div className={style.divButton}>
-          <button onClick={() => removeItem(id)}>X</button>
-        </div>
-    </div>
-  )
-}
+      </td>
+      <td>
+        <p>${precio}</p>
+      </td>
+      <td>
+        <p>{cantidad}</p>
+      </td>
+      <td>
+        <p>${subtotal}</p>
+      </td>
+    </tr>
+  );
+};
 
-export default CartItem
+export default CartItem;

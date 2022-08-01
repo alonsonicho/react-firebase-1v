@@ -1,45 +1,9 @@
-.container{
-    display: flex;
-    width: 90%;
-    margin: 0 auto;
-    justify-content: space-evenly;
-    padding: 10px;
-    background-color: #d9dad7;
+tr td img{
+    width: 100px;
+    height: 100px;
 }
 
-
-
-.divInfoImg{
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 40%;
-    text-transform: uppercase;
-    font-weight: bold;
-}
-
-.divInfoImg img {
-    width: 30%;
-    height: 70%;
-}
-
-.divInfo{
-    display: flex;
-    width: 40%;
-    align-items: center;
-    justify-content: space-evenly;
-    text-transform: uppercase;
-    font-weight: bold;
-}
-
-.divButton{
-    width: 20%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.divButton button{
+.buttonRemoveItem{
     background-color: #d63447;
     color: white;
     border-radius: 50px;
@@ -48,4 +12,31 @@
     outline: none;
     border: none;
     cursor: pointer;
+}
+
+.containerData{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.containerData div button {
+    background-color: #8d3434;
+    color: white;
+    border-radius: 5px;
+    padding: 8px;
+    width: 70px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.spanData{
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+}
+
+.spanData span{
+    margin: 3px;
 }

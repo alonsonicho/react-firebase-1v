@@ -1,6 +1,6 @@
 .itemList{
     display: flex;
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
     flex-wrap: wrap;
     justify-content: space-evenly;

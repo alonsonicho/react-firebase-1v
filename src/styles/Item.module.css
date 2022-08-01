@@ -1,16 +1,16 @@
 .containerInfo{
     width: 280px;
-    margin: 10px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     cursor: pointer;
     position: relative;
-    border: 1px solid black;
+    box-shadow: rgba(0, 0, 0, 0.45) 0 8px 15px;
+    margin: 50px 10px 0 10px;
 }
 
 .containerInfo:hover{
-    box-shadow: 0px 0px 15px 1px #A3A7AA ;
+    box-shadow: 0px 0px 15px 3px #A3A7AA ;
     transition: 0.4s ease;
 }
 
@@ -36,12 +36,14 @@
     flex-direction: column;
     text-align: center;
     padding: 10px 10px;
+    /* border: 3px solid red; */
 }
 
-.infoInt p{
-    border: 1px solid black;
+.infoInt :nth-child(2){
+    margin-top: 5px;
+    font-size: 20px;
+    color: black;
 }
-
 
 
 /* Button */
@@ -49,17 +51,17 @@
     appearance: none;
     background-color: white;
     border: 0.125em solid #1A1A1A;
-    border-radius: 10px;
+    border-radius: 5px;
     box-sizing: border-box;
     color: #3B3B3B;
     cursor: pointer;
     display: inline-block;
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 600;
     line-height: normal;
     margin: 0;
     padding: 8px;
-    margin-top: 10px;
+    margin-top: 0px;
     margin-bottom: 10px;
     min-width: 0;
     outline: none;

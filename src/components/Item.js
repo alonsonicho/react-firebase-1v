@@ -1,10 +1,10 @@
-import styles from "../styles/Item.module.css"
 import {Link} from "react-router-dom"
+import styles from "../styles/Item.module.css"
 
 const Item = ({imagen, nombre, precio, id}) => {
   return (
       <div className={styles.containerInfo}>
-          <img src={require(`../assets/${imagen}`)} alt={imagen} className={styles.imagen}/>
+          <img src={imagen} alt={imagen} className={styles.imagen}/>
           <div className={styles.info}>
               <div className={styles.infoInt}>
                   <span>{nombre}</span>
@@ -12,7 +12,7 @@ const Item = ({imagen, nombre, precio, id}) => {
               </div>
              <Link to={`/producto/${id}`}>
                 <button className={styles.buttonAdd}>
-                    Ver mas
+                    VISTA RAPIDA
                 </button>
              </Link>
           </div>

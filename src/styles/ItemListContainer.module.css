@@ -1,5 +1,6 @@
 .itemListContainer{
     width: 100%;
+    margin: 0 auto;
 }
 
 .itemListContainer > p{
